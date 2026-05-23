@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   link: {
-    color: "#244c8f",
+    color: "#3e3ca9",
     fontWeight: "700",
     fontSize: 16,
     marginTop: 12,

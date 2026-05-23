@@ -69,6 +69,11 @@ export default function Index() {
     if (filtro === "pendentes") return !tarefa.concluido;
     return true;
   });
+  const totalTarefas = tarefas.length;
+  const totalConcluidas = tarefas.filter (
+     (tarefas) => tarefas.concluido).length;
+  const totalPendentes = tarefas.filter (
+    (tarefas) => !tarefas.concluido).length;
 
   return (
     <View style={styles.container}>
@@ -82,15 +87,15 @@ export default function Index() {
         />
 
         <Button title="Adicionar" onPress={adicionarTarefa} />
-      </View>kl
+      </View>
       <View style={styles.filterRow}>
-        <Button title="Todos" onPress={() => setFiltro("todas")} />
+        <Button title={`Todos (${totalTarefas})`} onPress={() => setFiltro("todas")} />
 
         <Button
-          title="Concluídos"onPress={() => setFiltro("concluidas")} />
+          title={`Concluidos (${totalConcluidas})`} onPress={() => setFiltro("concluidas")} />
 
         <Button
-          title="Pendentes"onPress={() => setFiltro("pendentes")} />
+          title= {`Pendentes (${totalPendentes})`}onPress={() => setFiltro("pendentes")} />
       </View>
 
       <FlatList
@@ -128,7 +133,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 48,
     paddingHorizontal: 16,
-    backgroundColor: "#f6f7fb",
+    backgroundColor: "#9a92ef",
   },
 
   title: {
@@ -171,7 +176,7 @@ const styles = StyleSheet.create({
     width: 22,
     height: 22,
     borderWidth: 2,
-    borderColor: "#777",
+    borderColor: "#515fcb",
     borderRadius: 4,
     marginRight: 10,
   },
@@ -181,12 +186,12 @@ const styles = StyleSheet.create({
   },
 
   checkboxConcluido: {
-    backgroundColor: "#691212",
-    borderColor: "#8f172b",
+    backgroundColor: "#454bf9",
+    borderColor: "#0a066f",
   },
 
   itemTextConcluido: {
     textDecorationLine: "line-through",
-    color: "#9b1414",
+    color: "#4ab2ef",
   },
 });
