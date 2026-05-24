@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
   },
 
   checkboxConcluido: {
-    backgroundColor: "#454bf9",
+    backgroundColor: "#1e22a8",
     borderColor: "#0a066f",
   },
 
